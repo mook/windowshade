@@ -1,0 +1,200 @@
+/*
+ * This file is part of the WindowShade extension for Songbird
+ *
+ * Copyright(c) 2009 Mook
+ * Parts derived from Songbird, Copyright(c) 2005-2009 POTI, Inc.
+ *
+ * This file may be licensed under the terms of of the
+ * GNU General Public License Version 2 (the ``GPL'').
+ *
+ * Software distributed under the License is distributed
+ * on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+ * express or implied. See the GPL for the specific language
+ * governing rights and limitations.
+ *
+ * You should have received a copy of the GPL along with this
+ * program. If not, go to http://www.gnu.org/licenses/gpl.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+
+/* set the overall player to be 20px high instead, fits in the Win95 style
+ * (XP classic) titlebar better
+ */
+#miniplayer {
+  max-height: 20px;
+}
+
+#miniplayer,
+#faceplate.mini,
+#control_buttons_box,
+#volume_box {
+  min-height:20px !important;
+  height:20px !important;
+  max-height:20px !important;
+}
+
+#miniplayer-content {
+  padding: 0 7px !important;
+}
+
+/* back button */
+#miniplayer sb-player-back-button {
+  -moz-image-region: rect(5px 30px 25px 0px);
+}
+#miniplayer sb-player-back-button:hover {
+  -moz-image-region: rect(35px 30px 55px 0px);
+}
+#miniplayer sb-player-back-button:active {
+  -moz-image-region: rect(65px 30px 85px 0px);
+}
+#miniplayer sb-player-back-button[disabled] {
+  -moz-image-region: rect(95px 30px 115px 0px);
+}
+
+/* forward button */
+#miniplayer sb-player-forward-button {
+  -moz-image-region: rect(5px 30px 25px 0px);
+}
+#miniplayer sb-player-forward-button:hover {
+  -moz-image-region: rect(35px 30px 55px 0px);
+}
+#miniplayer sb-player-forward-button:active {
+  -moz-image-region: rect(65px 30px 85px 0px);
+}
+#miniplayer sb-player-forward-button[disabled] {
+  -moz-image-region: rect(95px 30px 115px 0px);
+}
+
+/* play button */
+#miniplayer .sb-player-play-button-play > button,
+#miniplayer .sb-player-playpause-button-play > button {
+  -moz-image-region: rect(5px 30px 25px 0px);
+}
+#miniplayer .sb-player-play-button-play:hover > button,
+#miniplayer .sb-player-playpause-button-play:hover > button {
+  -moz-image-region: rect(35px 30px 55px 0px);
+}
+#miniplayer .sb-player-play-button-play:active > button,
+#miniplayer .sb-player-playpause-button-play:active > button {
+  -moz-image-region: rect(65px 30px 85px 0px);
+}
+#miniplayer .sb-player-play-button-play[disabled] > button,
+#miniplayer .sb-player-playpause-button-play[disabled] > button {
+  -moz-image-region: rect(95px 30px 115px 0px);
+}
+
+/* pause button */
+#miniplayer .sb-player-pause-button-pause > button,
+#miniplayer .sb-player-playpause-button-pause > button {  
+  -moz-image-region: rect(5px 60px 25px 30px);
+}
+#miniplayer .sb-player-pause-button-pause:hover > button,
+#miniplayer .sb-player-playpause-button-pause:hover > button { 
+  -moz-image-region: rect(35px 60px 55px 30px);
+}
+#miniplayer .sb-player-pause-button-pause:active > button,
+#miniplayer .sb-player-playpause-button-pause:active > button {
+  -moz-image-region: rect(65px 60px 85px 30px);
+}
+#miniplayer .sb-player-pause-button-pause[disabled] > button,
+#miniplayer .sb-player-playpause-button-pause[disabled] > button { 
+  -moz-image-region: rect(95px 60px 115px 30px);
+}
+
+/* volume control box */
+#miniplayer stack.sb-player-volume-slider {
+  /* this looks better visually, though it makes no sense mathematically. */
+  padding-bottom: 1px;
+  margin-top: -1px;
+}
+
+/* progress bar container */
+#faceplate.mini {
+  border: none;
+  -moz-border-radius: 4px;
+  border-top: 2px solid red;
+  -moz-border-top-colors: rgba(0, 0, 0, 0) rgba(0, 0, 0, 1);
+  border-bottom: 2px solid red;
+  -moz-border-bottom-colors: rgba(0, 0, 0, 0) rgba(0, 0, 0, 1);
+}
+#faceplate.mini > stack.mini {
+  max-height: 16px;
+  overflow: hidden;
+}
+#faceplate.mini > stack.mini > * {
+  margin-top: -2px !important;
+}
+
+/* progress bar / slider */
+#miniplayer progressmeter.sb-player-seek-slider
+{
+  background-repeat:repeat-x;
+  background-position:center -10px !important;
+}
+#miniplayer progressmeter.sb-player-seek-slider > .progress-remainder
+{
+  background-repeat:repeat-x;
+  background-position:center -10px !important;
+}
+
+/* ratings container */
+#faceplate-tool.mini {
+  border: none;
+  -moz-border-radius: 4px;
+  border-top: 2px solid red;
+  -moz-border-top-colors: rgba(0, 0, 0, 0) rgba(0, 0, 0, 1);
+  border-bottom: 2px solid red;
+  -moz-border-bottom-colors: rgba(0, 0, 0, 0) rgba(0, 0, 0, 1);
+  margin-right: 2px;
+}
+#faceplate-tool.mini > hbox {
+  max-height: 16px;
+  overflow: hidden;
+}
+#faceplate-tool.mini > hbox > * {
+  margin-top: -2px !important;
+}
+#faceplate-tool-bar {
+  margin-top: -2px !important;
+}
+
+/* background under the ratings */
+#faceplate-tool > .hook {
+  background-position: center -10px;
+}
+
+/* close button */
+sb-sys-close-button.mini {
+  -moz-image-region: rect(4px 13px 17px 0px);
+  padding-bottom: 1px;
+}
+sb-sys-close-button:hover {
+  -moz-image-region: rect(21px 13px 34px 0px);
+}
+sb-sys-close-button:active {
+  -moz-image-region: rect(38px 13px 51px 0px);
+}
+sb-sys-close-button[disabled] {
+  -moz-image-region: rect(4px 13px 17px 0px) !important;
+  opacity: 0.5;
+}
+
+/* resizers */
+#miniplayer_resizer_left,
+#miniplayer_resizer_right {
+  background: url(chrome://songbird/skin/mini-player/bg.png);
+  border-width: 1px;
+  /* tint the background with greyscale; stronger on the top/bottom because
+   * they are smaller and harder to see.
+   */
+  border-color: rgba(255, 255, 255, 0.4)
+                rgba(  0,   0,   0, 0.1)
+                rgba(  0,   0,   0, 0.4)
+                rgba(255, 255, 255, 0.1);
+}
+#miniplayer_box > .hook > .left,
+#miniplayer_box > .hook > .right {
+  background-position:center top;
+}

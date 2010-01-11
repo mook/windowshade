@@ -1,0 +1,6 @@
+content windowshade  chrome/content/
+
+skin    windowshade  gonzo-2 chrome/gonzo-2/
+skin    windowshade  purplerain chrome/purplerain/
+
+style chrome://windowshade/content/windowshade.xul chrome://windowshade/skin/windowshade.css

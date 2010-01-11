@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+     xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>windowshade@mook.songbirdnest.com</em:id>
+    <em:type>2</em:type>
+    <em:name>WindowShade</em:name>
+    <em:version>0.0.0.20100108</em:version>
+    <em:creator>Mook</em:creator>
+    <em:description>Gonzo-style miniplayer for Purple Rain</em:description>
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>1.4.1</em:minVersion>
+        <em:maxVersion>1.4.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <songbird:skin>
+      <Description>
+        <songbird:name>Gonzo 2.0</songbird:name>
+        <songbird:internalName>gonzo-2</songbird:internalName>
+        <songbird:compatibleLayout>
+          <Description>
+            <songbird:layoutURL>chrome://windowshade/content/windowshade.xul</songbird:layoutURL>
+            <songbird:showChrome>false</songbird:showChrome>
+            <songbird:onTop>true</songbird:onTop>
+          </Description>
+        </songbird:compatibleLayout>
+      </Description>
+    </songbird:skin>
+    <songbird:skin>
+      <Description>
+        <songbird:name>Purple Rain (default)</songbird:name>
+        <songbird:internalName>purplerain</songbird:internalName>
+        <songbird:compatibleLayout>
+          <Description>
+            <songbird:layoutURL>chrome://windowshade/content/windowshade.xul</songbird:layoutURL>
+            <songbird:showChrome>false</songbird:showChrome>
+            <songbird:onTop>true</songbird:onTop>
+          </Description>
+        </songbird:compatibleLayout>
+      </Description>
+    </songbird:skin>
+    <songbird:layout>
+      <Description>
+        <songbird:name>Windowshade</songbird:name>
+        <songbird:url>chrome://windowshade/content/windowshade.xul</songbird:url>
+      </Description>
+    </songbird:layout>
+  </Description>
+</RDF>
