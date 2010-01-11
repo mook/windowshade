@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!-- vim: set sw=2 lang=html -->
+<html lang="en">
+<head>
+  <title>WindowShade Feathering Guide</title>
+  <style>@import url(global.css);</style>
+</head>
+<body step="-1">
+  <h1>WindowShade Feathering Guide</h1>
+  <p>
+    Follow this to style the WindowShade window to look in a custom manner.
+  </p>
+  <p>
+    If you wish to look at a how a working feather is put together, verso's
+    <a href="http://addons.songbirdnest.com/addon/1655">Ne+</a> may be
+    instructive.
+  </p>
+
+
+<a name="prereqs"><h2 class="step">Prerequsites</h2></a>
+  <p>
+    You need to know how to make a feather (preferable, already have one that
+    supports the main player and the Purple Rain miniplayer).  See the
+    <a href="https://wiki.songbirdnest.com/Developer/Developer_Intro/Feathers">Feather Intro</a>
+    for basic details.
+  </p>
+
+
+<a name="install.rdf"><h2 class="step">Install Manifest</h2></a>
+  <p>
+    First, modify your <tt>install.rdf</tt> to support the new layout: in the
+    <code>&lt;songbird:skin&gt;</code> section, add support for
+    <tt>chrome://windowshade/content/windowshade.xul</tt>:
+  </p>
+  <pre type="code">
+&lt;songbird:compatibleLayout&gt;
+  &lt;Description&gt;
+    &lt;songbird:layoutURL&gt;<strong>chrome://windowshade/content/windowshade.xul</strong>&lt;/songbird:layoutURL&gt;
+    &lt;songbird:showChrome&gt;false&lt;/songbird:showChrome&gt;
+    &lt;songbird:onTop&gt;true&lt;/songbird:onTop&gt;
+  &lt;/Description&gt;
+&lt;/songbird:compatibleLayout&gt;
+    </pre>
+  <p>
+    You should have already been claiming support for the main player
+    (<tt>chrome://purplerain/content/xul/mainplayer.xul</tt>), so just copying
+    that section appropriately and changing the layoutURL and onTop should be
+    sufficient.
+  </p>
+
+
+<a name="chrome.manifest"><h2 class="step">Chrome Manifest</h2></a>
+  <p>
+    Edit your chrome manifest to register a <tt>skin</tt> location for the
+    <tt>windowshade</tt> package.  For example, if your
+    <tt>chrome.manifest</tt> already has the following:
+  </p>
+  <pre type="code">
+skin <span class="purple">songbird</span> example-feather chrome/skin/
+  </pre>
+  <p>
+    Then you need to add the following line:
+  </p>
+  <pre type="code">
+skin <span class="purple">windowshade</span> example-feather <span class="green">chrome/windowshade/</span>
+  </pre>
+
+
+<a name="css"><h2 class="step">CSS</h2></a>
+  <p>
+    Simply add a CSS file at
+    <tt><span class="green">chrome/windowshade/</span>windowshade.css</tt>
+    relative to your chrome.manifest, and that will be applied to the
+    WindowShade window when it is active.  You are free to do anything you can
+    in the CSS, including <tt>@import</tt> other files.  
+  </p>
+  <p>
+    A sample layout might be:
+  </p>
+  <pre type="tt">
++---install.rdf
++---chrome.manifest
+\---<span class="green">chrome</span>
+    +---skin
+    |   +---songbird.css
+    |   +---feathers.css
+    |   \---...
+    \---<span class="green">windowshade</span>
+        \---windowshade.css
+  </pre>
+  <p>
+    It may be useful to base your windowshade.css off the included Purple Rain
+    version of <tt>chrome://windowshade/skin/windowshade.css</tt> &mdash; it
+    uses only images from the default feather, and does not use any colours that
+    are not greyscale.
+  </p>
+
+
+<a name="troubleshooting"><h2 class="step">Troubleshooting</h2></a>
+  <ul>
+    <li>
+      Check <tt>view-source:chrome://windowshade/skin/windowshade.css</tt> in
+      the browser to see if your stylesheet was correctly registered.
+    </li>
+    <li>
+      If the style is correctly registered but some styles are not applying, use
+      DOM Inspector's CSS Rules view on the element to see if the rule is being
+      found.  Also, use it to check for places where <em>!important</em> was
+      used &mdash; content-supplied <em>!important</em> overrides skin-supplied
+      <em>!important</em> when from the UA stylesheet.  If anything in
+      <tt>chrome://windowshade/content/</tt> is using <em>!important</em> and
+      causing you difficulty, please leave a note on the addons page.
+    </li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* vim: set sw=2 lang=css */
+body {
+  color: rgb( 32, 32, 32 );
+  background: rgb( 250, 250, 250 );
+  font-family: Helvetica, Arial, FreeSans, sans-serif;
+  font-size: 1em; /* respect user settings */
+  max-width: 62em;
+  margin: auto;
+  margin-bottom: 10em;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  margin: 1.3em;
+  color: rgb( 64, 64, 64 );
+}
+p {
+  margin: 1em 2em;
+}
+code {
+  font-family: monospace;
+}
+a[href] {
+  color: rgb( 64, 64, 192 );
+  cursor: pointer;
+  text-decoration: underline;
+}
+a:visited {
+  color: rgb( 128, 128, 128 );
+}
+a[href]:hover {
+  outline: 1px dotted rgb( 224, 224, 224 );
+}
+body[step="-1"] {
+  counter-reset: step -1;
+}
+.step {
+  counter-increment: step 1;
+}
+.step::before {
+  content: counter(step) ". ";
+}
+pre {
+  white-space: pre;
+  margin: 1em 2em 1em 4em;
+  padding: 1em 2em;
+  border: 1px dashed rgb( 128, 128, 128 );
+  overflow-x: auto;
+}
+@media all and (min-color: 8) {
+  /* we don't want this in Songbird / Gecko 1.9.0 due to bug 238072 not being
+   * fixed there
+   */
+  pre {
+    position: relative;
+    overflow: hidden;
+  }
+  pre[type]::after {
+    position: absolute;
+    margin-bottom: -0.35em;
+    margin-right: -0.4em;
+    bottom: 0;
+    right: 0;
+    color: rgb( 242, 242, 242);
+    font-size: 4em;
+    font-family: Helvetica, Arial, FreeSans, sans-serif;
+    content: "</" attr(type) ">";
+  }
+}
+ul {
+  margin-right: 1em;
+}
+li {
+  margin: 1em 0;
+}
+.purple {
+  color: rgb( 160, 32, 160 );
+}
+.green {
+  color: rgb( 32, 160, 32 );
+}
