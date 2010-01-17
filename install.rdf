@@ -5,7 +5,7 @@
     <em:id>windowshade@mook.songbirdnest.com</em:id>
     <em:type>2</em:type>
     <em:name>WindowShade</em:name>
-    <em:version>0.0.0.20100110.2</em:version>
+    <em:version>0.0.0.20100116</em:version>
     <em:creator>Mook</em:creator>
     <em:description>Gonzo-style miniplayer for Purple Rain</em:description>
     <em:homepageURL>http://mook.github.com/windowshade/</em:homepageURL>
@@ -17,36 +17,24 @@
         <em:maxVersion>1.4.*</em:maxVersion>
       </Description>
     </em:targetApplication>
-    <songbird:skin>
-      <Description>
-        <songbird:name>Gonzo 2.0</songbird:name>
-        <songbird:internalName>gonzo-2</songbird:internalName>
-        <songbird:compatibleLayout>
-          <Description>
-            <songbird:layoutURL>chrome://windowshade/content/windowshade.xul</songbird:layoutURL>
-            <songbird:showChrome>false</songbird:showChrome>
-            <songbird:onTop>true</songbird:onTop>
-          </Description>
-        </songbird:compatibleLayout>
-      </Description>
-    </songbird:skin>
-    <songbird:skin>
-      <Description>
-        <songbird:name>Purple Rain (default)</songbird:name>
-        <songbird:internalName>purplerain</songbird:internalName>
-        <songbird:compatibleLayout>
-          <Description>
-            <songbird:layoutURL>chrome://windowshade/content/windowshade.xul</songbird:layoutURL>
-            <songbird:showChrome>false</songbird:showChrome>
-            <songbird:onTop>true</songbird:onTop>
-          </Description>
-        </songbird:compatibleLayout>
-      </Description>
-    </songbird:skin>
     <songbird:layout>
       <Description>
         <songbird:name>Windowshade</songbird:name>
         <songbird:url>chrome://windowshade/content/windowshade.xul</songbird:url>
+        <songbird:compatibleSkin>
+          <Description>
+            <songbird:internalName>purplerain</songbird:internalName>
+            <songbird:showChrome>false</songbird:showChrome>
+            <songbird:onTop>true</songbird:onTop>
+          </Description>
+        </songbird:compatibleSkin>
+        <songbird:compatibleSkin>
+          <Description>
+            <songbird:internalName>gonzo-2</songbird:internalName>
+            <songbird:showChrome>false</songbird:showChrome>
+            <songbird:onTop>true</songbird:onTop>
+          </Description>
+        </songbird:compatibleSkin>
       </Description>
     </songbird:layout>
   </Description>
