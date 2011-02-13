@@ -5,7 +5,7 @@
     <em:id>windowshade@mook.songbirdnest.com</em:id>
     <em:type>2</em:type>
     <em:name>WindowShade</em:name>
-    <em:version>0.0.0.20100911</em:version>
+    <em:version>0.0.0.20110211</em:version>
     <em:creator>Mook</em:creator>
     <em:description>Gonzo-style miniplayer for Purple Rain</em:description>
     <em:homepageURL>http://mook.github.com/windowshade/</em:homepageURL>
@@ -14,7 +14,7 @@
       <Description>
         <em:id>songbird@songbirdnest.com</em:id>
         <em:minVersion>1.4.1</em:minVersion>
-        <em:maxVersion>1.8.0</em:maxVersion>
+        <em:maxVersion>1.9.3</em:maxVersion>
       </Description>
     </em:targetApplication>
     <songbird:layout>
